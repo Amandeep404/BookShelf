@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/tvBookDescriptionSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            tools:text="Books_Subtitle"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/flBookImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvBookDescriptionSubtitle">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBookDescriptionFragmentImage"
+                android:layout_width="200dp"
+                android:layout_height="320dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/sample_book_img" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="42dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@color/cream_color"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_favorite_24"
+                app:borderWidth="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/flBookImage">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@color/light_grey"
+                android:gravity="center"
+                android:orientation="horizontal"
+
+                >
+
+                <TextView
+                    android:id="@+id/tvBookDescriptionRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_grey"
+                    android:paddingHorizontal="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="3dp"
+                    android:text="Rating: "
+
+                    />
+
+                <RatingBar
+                    android:id="@+id/rbRatingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/light_grey"
+                    android:clickable="false"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:theme="@style/Ratingbar" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@color/light_grey"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvBookDescriptionYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    android:text="Year: " />
+
+                <TextView
+                    android:id="@+id/tvBookDescriptionPublisher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="7dp"
+                    android:text="Publisher: " />
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBuyBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Buy"
+                android:backgroundTint="@color/pastel_yellow"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                />
+
+            <TextView
+                android:id="@+id/tvBooksDescriptionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+
+                />
+
+            <TextView
+                android:id="@+id/tvBookDescriptionContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Description Content"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvBookDescriptionAuthorTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Author"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvBookDescriptionAuthorNames"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:text="Author Name"
+                android:textSize="16sp"
+                android:paddingBottom="30dp"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>

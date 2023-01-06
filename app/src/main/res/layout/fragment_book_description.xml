@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.BookDescriptionFragment">
+
+    <LinearLayout
+        android:id="@+id/llBooksTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="30dp"
+        android:paddingBottom="16dp"
+        android:background="@color/myRed"
+        >
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnDescriptionBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:background="@null"
+            android:tint="@color/light_grey"
+            android:paddingLeft="13dp"
+            android:layout_gravity="top"
+
+            />
+        <TextView
+            android:id="@+id/tvBookDescriptionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Books_Title"
+            android:gravity="center"
+            android:textColor="@color/light_grey"
+            android:textSize="22sp"
+            android:layout_marginRight="13dp"
+            />
+
+    </LinearLayout>
+
+
+
+<include layout="@layout/sv_layout"
+    app:layout_constraintTop_toBottomOf="@id/llBooksTitle"
+    android:layout_height="0dp"
+    android:layout_width="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
