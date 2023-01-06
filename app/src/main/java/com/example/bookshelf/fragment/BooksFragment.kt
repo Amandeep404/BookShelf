@@ -103,7 +103,7 @@ class BooksFragment : Fragment(R.layout.fragment_books) {
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         }
     }
-  
+
 
     private fun hideProgressBar() {
         paginationProgressBar.visibility = View.VISIBLE

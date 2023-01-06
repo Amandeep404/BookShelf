@@ -1,7 +1,6 @@
 package com.example.bookshelf.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -11,8 +10,10 @@ import com.example.bookshelf.R
 import com.example.bookshelf.model.Book
 import kotlinx.android.synthetic.main.item_book.view.*
 
-class  BooksAppAdapter : RecyclerView.Adapter<BooksAppAdapter.DescriptionViewHolder>() {
-    inner class DescriptionViewHolder(view: View) : RecyclerView.ViewHolder(view)
+class  BooksAppAdapter : RecyclerView.Adapter<HomeViewHolder>() {
+
+    private val ITEM_TYPE_DESCRIPTION = 0
+    private val ITEM_TYPE_DATA_SCIENCE = 0
 
     private val differCallBack = object :DiffUtil.ItemCallback<Book>(){
         override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
@@ -25,12 +26,20 @@ class  BooksAppAdapter : RecyclerView.Adapter<BooksAppAdapter.DescriptionViewHol
     }
     val differ = AsyncListDiffer(this, differCallBack)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DescriptionViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
-        return DescriptionViewHolder(layoutInflater)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
+        if (viewType == ITEM_TYPE_DESCRIPTION){
+            return HomeViewHolder.DescriptionViewHolder(
+                LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
+            )
+
+        }else
+            return HomeViewHolder.DataScienceViewHolder(
+                LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
+            )
     }
 
-    override fun onBindViewHolder(holder: DescriptionViewHolder, position: Int) {
+
+    override fun onBindViewHolder(holder: HomeViewHolder.DescriptionViewHolder, position: Int) {
         val description = differ.currentList[position]
         holder.itemView.apply {
             Glide.with(context)
@@ -58,5 +67,9 @@ class  BooksAppAdapter : RecyclerView.Adapter<BooksAppAdapter.DescriptionViewHol
 
     fun setOnItemClickListener(listener : (Book) -> Unit){
         onItemClickListener = listener
+    }
+
+    override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
+        TODO("Not yet implemented")
     }
 }
