@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/clBooksFragment"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.BooksFragment">
 
@@ -29,12 +33,12 @@
             />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivProfile"
+            android:id="@+id/ivBookFragmentProfilePic"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_weight="1"
             android:layout_gravity="bottom|end"
-            android:src="@drawable/books_app_icon"
+            android:src="@drawable/book_app_icon"
             android:layout_marginBottom="5dp"
 
             />
@@ -59,14 +63,16 @@
    <LinearLayout
        android:id="@+id/llRecommendedSection"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="0dp"
        android:orientation="vertical"
+       app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintTop_toBottomOf="@id/svBooks"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        android:layout_marginTop="15dp"
        >
        <LinearLayout
+           android:id="@+id/llTvRecommend"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
@@ -75,7 +81,7 @@
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Recommended for You"
+               android:text="Latest Collection"
                android:textSize="20sp"
                android:textColor="@color/navy_blue"
                android:textStyle="normal"
@@ -102,69 +108,20 @@
        <androidx.recyclerview.widget.RecyclerView
            android:id="@+id/rvRecommended"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           tools:listitem="@layout/item_book"
+           android:layout_height="0dp"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:foregroundGravity="center"
            tools:itemCount="1"
-           android:orientation="horizontal"
+           tools:listitem="@layout/item_book"
+           android:theme="@style/MyEdgeOverlayTheme"
+
            />
 
 
    </LinearLayout>
 
-    <!--DATA SCIENCE SECTION-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/llRecommendedSection"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="6dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Books Related to Data Science"
-                android:textSize="20sp"
-                android:textColor="@color/navy_blue"
-                android:textStyle="normal"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="4"
-                android:layout_marginLeft="6dp"
 
-                />
-            <TextView
-                android:id="@+id/tvDataScienceShowAll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Show all "
-                android:paddingHorizontal="6dp"
-                android:layout_gravity="center"
-                android:textSize="13sp"
-                android:textColor="@color/pastel_yellow"
-                android:gravity="end"
-
-                />
-
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvDataScience"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/item_book"
-            tools:itemCount="1"
-            android:orientation="horizontal"
-            />
-    </LinearLayout>
-
-    <!--DATA SCIENCE END-->
 
     <ProgressBar
         android:id="@+id/paginationProgressBar"
@@ -172,6 +129,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
+        android:indeterminateTint="@color/orange_yellow"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

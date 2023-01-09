@@ -32,7 +32,7 @@ class BooksViewModel(
         newBooks.postValue(handleResponse(response))
     }
 
-    fun searchBooks(searchQuery : String) =viewModelScope.launch {
+    fun searchBooks(searchQuery : String) = viewModelScope.launch {
         searchBooks.postValue(Resource.Loading())
 
         val response = booksRepository.searchNews(searchQuery, searchPageNumber)

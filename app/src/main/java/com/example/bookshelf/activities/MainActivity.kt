@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
+    private lateinit var myUserName : String
 
     private var doubleBackToExitPressedOnce = false
     private lateinit var auth: FirebaseAuth
@@ -22,6 +23,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -35,15 +37,8 @@ class MainActivity : BaseActivity() {
         val navController =navHostFragment.navController
         bottomNavView.setupWithNavController(navController)
 
-       /* button.setOnClickListener{
-            AuthUI.getInstance().signOut(this).addOnCompleteListener{
-                startActivity(Intent(this, SignInActivity::class.java))
-                finish()
-            }.addOnFailureListener{
-                toast(this, "Failed in signing out")
-            }
-
-        }*/
 
     }
+
+
 }

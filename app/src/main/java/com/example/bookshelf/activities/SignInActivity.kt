@@ -71,18 +71,16 @@ class SignInActivity : BaseActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener {
                 if (it.isSuccessful){
-                    hideProgressBar()
-                    val user = auth.currentUser
-                    updateUI(user)
+                   updateUI(auth.currentUser)
                 }else{
+
+                    showErrorSnackBar("Invalid E-mail or Password")
                     hideProgressBar()
-                    toast(this, "LogIn Credentials Error")
-                    updateUI(null)
 
                 }
             }
-
     }
+
 
     private fun updateUI(user: FirebaseUser?) {
 

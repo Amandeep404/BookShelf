@@ -13,19 +13,22 @@
         <action
             android:id="@+id/action_booksFragment_to_bookDescriptionFragment"
             app:destination="@id/bookDescriptionFragment" />
+        <action
+            android:id="@+id/action_booksFragment_to_searchBookFragment"
+            app:destination="@+id/bookmarkBookFragment" />
     </fragment>
     <fragment
-        android:id="@+id/searchBookFragment"
-        android:name="com.example.bookshelf.fragment.SearchBookFragment"
+        android:id="@+id/bookmarkBookFragment"
+        android:name="com.example.bookshelf.fragment.BookmarksFragment"
         android:label="fragment_search_book"
-        tools:layout="@layout/fragment_search_book" >
+        tools:layout="@layout/fragment_bookmark" >
         <action
-            android:id="@+id/action_searchBookFragment_to_bookDescriptionFragment"
+            android:id="@+id/action_bookmarkFragment_to_bookDescriptionFragment"
             app:destination="@id/bookDescriptionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/savedBooksFragment"
-        android:name="com.example.bookshelf.fragment.SavedBooksFragment"
+        android:id="@+id/settingsBooksFragment"
+        android:name="com.example.bookshelf.fragment.SettingsFragment"
         android:label="fragment_saved_books"
         tools:layout="@layout/fragment_saved_books" >
         <action

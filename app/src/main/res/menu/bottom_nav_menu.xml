@@ -6,14 +6,14 @@
         android:icon="@drawable/books_app_icon"
         />
 
-    <item android:id="@+id/searchBookFragment"
-        android:title="Search"
-        android:icon="@drawable/ic_baseline_search_24"
+    <item android:id="@+id/bookmarkBookFragment"
+        android:title="Bookmark"
+        android:icon="@drawable/ic_baseline_bookmark_border_24"
         />
 
-    <item android:id="@+id/savedBooksFragment"
-        android:title="Saved"
-        android:icon="@drawable/saved_icon"
-        />
+    <!--<item android:id="@+id/settingsBooksFragment"
+        android:title="Settings"
+        android:icon="@drawable/setting_icon"
+        />-->
 
 </menu>

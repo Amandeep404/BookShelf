@@ -1,12 +1,10 @@
 package com.example.bookshelf.fragment
 
-import android.app.Dialog
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -24,6 +22,7 @@ import kotlinx.android.synthetic.main.sv_layout.*
 class BookDescriptionFragment : Fragment(R.layout.fragment_book_description) {
     lateinit var viewModel: BooksViewModel
     private var clicked = 0
+   // private lateinit var user : User
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,6 +43,16 @@ class BookDescriptionFragment : Fragment(R.layout.fragment_book_description) {
         viewModel.getFullData(isbn!!)
         viewModel.booksAllData.observe(viewLifecycleOwner, Observer {
             Log.d("DIS", it.desc)
+        /*    if (user.liked.toMutableList().contains(it)){
+                fabBookDescription.setColorFilter(Color.RED)
+            }*/
+
+            fabBookDescription.setOnClickListener{click ->
+                viewModel.saveBooks(it)
+               // user.liked.toMutableList().add(it)
+                fabBookDescription.setColorFilter(Color.RED)
+            }
+
 
             tvBookDescriptionContent.text = it.desc.dropLast(4)
             tvBookDescriptionAuthorNames.text = it.authors
@@ -62,13 +71,10 @@ class BookDescriptionFragment : Fragment(R.layout.fragment_book_description) {
         })
 
         btnDescriptionBack.setOnClickListener {
-            val action = BookDescriptionFragmentDirections.actionBookDescriptionFragmentToBooksFragment()
-            findNavController().navigate(action)
+               requireActivity().onBackPressed()
         }
 
-
     }
-
 
     companion object{
         const val WEB_VIEW_KEY = "WV_KEY"

@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:theme="@style/MyEdgeOverlayTheme"
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -39,7 +40,7 @@
                 tools:src="@drawable/sample_book_img" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
+                android:id="@+id/fabBookDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
