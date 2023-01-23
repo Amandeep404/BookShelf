@@ -3,7 +3,7 @@ A simple easy to use app for buying Computer Science related Books.
 
 ## App Structure 
 
-**BookShelf** is an Android App build using `Kotlin` and its UI is made using `XML`. The App is using the `MVVM Architecture` so that it is easy to make new changes to the app in the future.
+**BookShelf** is an Android App built using `Kotlin` and its UI is made using `XML`. The App is using the `MVVM Architecture` so that it is easy to make new changes to the app in the future.
 * Splash Screen - For the Splash Screen I have used the new [Splash Screen Api](https://developer.android.com/develop/ui/views/launch/splash-screen) provided by the Android team.
 * Api used - I have used [IT Bookstore API](https://api.itbook.store/) for retrieving books data with the data help of `Retrofit` client for parsing `JSON` response.
 * Saving data - User can bookmark the books which he/she like or want to buy later. This data is saved in the app's internal storage using the `ROOM library`
