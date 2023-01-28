@@ -1,6 +1,9 @@
 # BookShelf
 A simple easy to use app for buying Computer Science related Books.
 
+<img src="https://user-images.githubusercontent.com/107784525/215279639-ea9db523-2ad1-4d0f-8a8d-978900f4e593.png" alt="drawing" style="width:900px"/> 
+
+
 ## App Structure 
 
 **BookShelf** is an Android App built using `Kotlin` and its UI is made using `XML`. The App is using the `MVVM Architecture` so that it is easy to make new changes to the app in the future.
